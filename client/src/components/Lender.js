@@ -27,22 +27,22 @@ class Lender extends Component {
     });
   };
 
-  handleListingSubmit = event => {
-    event.preventDefault();
-    console.log(this.state.name);
-    console.log(this.state.email);
-    console.log(this.state.location);
-    console.log(this.state.phone);
-    API.saveListing({
-      name: this.state.name,
-      location: this.state.location,
-      email: this.state.email,
-      phone: this.state.phone,
-      availability: true
-    })
-    .then(res => console.log(`${res}`))
-    .catch(err => console.log(err));
-  };
+  // handleListingSubmit = event => {
+  //   event.preventDefault();
+  //   console.log(this.state.name);
+  //   console.log(this.state.email);
+  //   console.log(this.state.location);
+  //   console.log(this.state.phone);
+  //   API.saveListing({
+  //     name: this.state.name,
+  //     location: this.state.location,
+  //     email: this.state.email,
+  //     phone: this.state.phone,
+  //     availability: true
+  //   })
+  //   .then(res => console.log(`${res}`))
+  //   .catch(err => console.log(err));
+  // };
 
   login = () => {
     this.setState({ loggedIn: true});
@@ -73,7 +73,7 @@ class Lender extends Component {
 
     let submit
     if (nameState && emailState && locationState && phoneState) {
-      submit = <a onClick={this.handleListingSubmit} id="searchButton">Submit</a>
+      submit = <a onClick={this.getState} id="searchButton">Submit</a>
     } else {
       submit = <a id="noSearch">Submit</a>
     };
